@@ -8,10 +8,14 @@ export default function AppXY() {
     <div
       className='container'
       onMouseMove={(e) => {
-        console.log(e.clientX);
+        //setMouseXY({ x: e.clientX, y: e.clientY });
+        setMouseXY((prev) => ({ ...prev, x: e.clientX }));
       }}
     >
-      <div className='pointer'></div>
+      <div
+        className='pointer'
+        style={{ transform: `translate(${mouseXY.x}px, ${mouseXY.y}px)` }}
+      ></div>
     </div>
   );
 }
