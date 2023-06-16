@@ -10,7 +10,7 @@ export default function AppMentor() {
     const currentName = prompt("무엇으로 바꾸시겠습니까?");
 
     updatePerson((person) => {
-      const mentor = person.mentor.find((v) => v.name == prevName);
+      const mentor = person.mentor.find((v) => v.name === prevName);
       mentor.name = currentName;
     });
   };
